@@ -27,7 +27,7 @@ app.post("/webhook", async (req, res) => {
           const aiRes = await fetch("https://api.openai.com/v1/chat/completions", {
             method: "POST",
             headers: { "Content-Type":"application/json", "Authorization":`Bearer ${OPENAI_KEY}` },
-            body: JSON.stringify({ model:"gpt-4o-mini", messages:[{ role:"user", content:userText }] })
+            body: JSON.stringify({ model:"gpt-5-mini", messages:[{ role:"user", content:userText }] })
           });
           const aiJson = await aiRes.json();
           console.log("🧠 OpenAI status:", aiRes.status, aiRes.statusText);
